@@ -1,0 +1,70 @@
+h1,
+h2 {
+  font-weight: 500;
+  line-height: 0.75;
+}
+
+.scroll__content,
+.scroll__stage.js-mobile,
+.layout__line,
+.scroll__stage,
+canvas.webgl {
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.layout__line,
+.scroll__stage,
+canvas.webgl {
+  position: fixed;
+}
+
+.scroll__content,
+.scroll__stage.js-mobile {
+  position: absolute;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+canvas.webgl {
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: -1;
+}
+@media (max-width: 64em) {
+  canvas.webgl {
+    opacity: 0.3;
+  }
+}
+
+.scroll__stage {
+  min-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.scroll__stage.js-mobile {
+  height: auto;
+}
+.scroll__stage.js-mobile .scroll__content {
+  position: relative;
+}
+.scroll__content {
+  will-change: transform;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 8rem;
+  position: relative;
+}

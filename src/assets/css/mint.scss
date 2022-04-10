@@ -1,0 +1,176 @@
+.mint-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(to right, #1e1e1e 0%, black 100%);
+  padding: 24px;
+  .mint-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 8px 16px;
+    pointer-events: all;
+    width: 100%;
+    z-index: 1050;
+    background-color: transparent;
+    .menu-container {
+      display: flex;
+      align-items: center;
+      .menu {
+        text-align: center;
+        a {
+          padding: 4px 16px;
+          color: white;
+          font-weight: 600;
+          text-transform: uppercase;
+          font-size: 12px;
+          transition: all 0.4s;
+          opacity: 0.6;
+          cursor: pointer;
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+      .logo {
+        width: 48px;
+        height: auto;
+        margin-right: 16px;
+      }
+    }
+    .links-container {
+      flex-shrink: 0;
+    }
+    .links {
+      text-align: right;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      a {
+        padding: 8px;
+
+        svg {
+          width: 18px;
+          height: 18px;
+          fill: white;
+        }
+      }
+      .divider {
+        width: 1px;
+        height: 24px;
+        background-color: rgba(white, 30%);
+        margin: 0 16px;
+      }
+    }
+
+    .menu-icon {
+      text-align: right;
+    }
+  }
+  .mint-content {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    .mint-form-wrapper {
+      .mint-description {
+        margin-bottom: 24px;
+        h3 {
+          text-align: center;
+          font-family: "title";
+          font-size: 48px;
+          -webkit-text-fill-color: #0000;
+          -webkit-background-clip: text;
+          background-image: linear-gradient(45deg, #f94327 0%, #ff7d14 100%);
+        }
+        p {
+          text-align: center;
+        }
+      }
+      .mint-form-container {
+        padding: 48px 15%;
+        width: 100%;
+        display: block;
+        margin: auto;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        background-color: transparent;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .main-form {
+          display: block;
+          width: 100%;
+          margin-bottom: 16px;
+          label {
+            display: block;
+            font-size: 12px;
+            margin-bottom: 4px;
+          }
+          input {
+            width: 100%;
+            height: 46px;
+            background-color: transparent;
+            border: 1px solid rgba(white, 0.1);
+            border-radius: 8px;
+            transition: all 0.4s;
+            text-align: center;
+            font-size: 24px;
+            color: white;
+            &:hover {
+              border-color: rgba(white, 0.2);
+            }
+            &:focus {
+              border-color: $primary !important;
+            }
+          }
+        }
+        .primary-btn {
+          width: 100%;
+          height: 56px;
+          min-width: 100%;
+          padding: 0;
+          margin-top: 48px;
+        }
+      }
+    }
+    .mint-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr;
+      gap: 4px;
+      padding: 0 24px;
+      .item {
+        width: 100%;
+        height: 180px;
+        background-color: transparent;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 180px;
+          object-fit: cover;
+          transition: all 0.4s;
+          &:hover {
+            transform: scale(1.3);
+          }
+        }
+      }
+      .item-5 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        h3 {
+          font-family: "title";
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}

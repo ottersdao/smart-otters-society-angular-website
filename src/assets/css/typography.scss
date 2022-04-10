@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "title";
+  src: url("../fonts/title.otf") format("opentype");
+}
+
+.title {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 64px;
+  color: white;
+  font-family: "title";
+}

@@ -1,0 +1,178 @@
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block !important;
+  }
+  .frame__links {
+    display: none !important;
+  }
+  .frame__menu {
+    display: none !important;
+  }
+
+  .frame__logo {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .section {
+    padding: 16px !important;
+  }
+
+  .hero__content {
+    .hero__title {
+      text-align: center;
+      font-size: 64px !important;
+      span {
+        font-size: 80px !important;
+      }
+    }
+    .hero__description {
+      font-size: 40px !important;
+    }
+  }
+
+  .about__content {
+    width: 100% !important;
+    .title {
+      text-align: center;
+      font-size: 64px !important;
+    }
+    .about__description {
+      text-align: justify;
+      padding: 0 16px;
+    }
+  }
+
+  .work__content {
+    .work__description {
+      text-align: justify;
+      width: 100%;
+      padding: 16px;
+    }
+  }
+
+  .rarity__content {
+    .title {
+      text-align: center;
+    }
+    .rarity__description {
+      text-align: justify;
+      width: 100%;
+      padding: 16px;
+    }
+    #chartContainer {
+      width: 500px;
+      height: 500px;
+    }
+  }
+
+  .roadmap__content {
+    .roadmap__description {
+      width: 100% !important;
+      text-align: justify !important;
+      padding: 16px;
+    }
+    .timeline__wrapper {
+      width: 100% !important;
+      &:before {
+        left: 0 !important;
+        right: auto !important;
+      }
+      .timeline__title__content {
+        display: none !important;
+      }
+      .item {
+        // order: 1;
+
+        &::before {
+          right: auto;
+          left: -6px;
+        }
+        &.item__right {
+          // order: 2 !important;
+          .item__content {
+            margin-right: 0 !important;
+            margin-left: 24px !important;
+          }
+        }
+        .item__content {
+          margin-left: 24px !important;
+          width: 100% !important;
+          span {
+            display: block !important;
+          }
+        }
+      }
+    }
+  }
+
+  .info__content {
+    .title {
+      font-size: 56px;
+      padding: 0 16px;
+    }
+  }
+
+  .giveaway__content {
+    width: 100%;
+    margin-bottom: 64px !important;
+    height: 100% !important;
+    .giveaway-album-wrapper {
+      grid-template-columns: repeat(2, 1fr) !important;
+      grid-template-rows: 1fr !important;
+      .item {
+        height: 200px;
+
+        img {
+          width: 100%;
+          // object-fit: contain !important;
+        }
+      }
+      .item-1,
+      .item-2,
+      .item-3,
+      .item-4,
+      .item-5 {
+        grid-area: unset !important;
+      }
+    }
+    .album-designer {
+      left: auto !important;
+      right: 0 !important;
+      margin: auto;
+    }
+  }
+
+  .team__content {
+    width: 100% !important;
+    .team__grid {
+      grid-template-columns: 1fr !important;
+      gap: 16px !important;
+      .item {
+        &:nth-child(even) {
+          transform: translateY(0) !important;
+        }
+      }
+    }
+  }
+  .faq__content {
+    width: 100% !important;
+  }
+
+  .footer__content {
+    .title {
+      font-size: 64px;
+    }
+  }
+}
+
+@media (max-height: 700px) {
+  .hero__content {
+    padding: 128px 0;
+  }
+}
+
+@media (min-width: 1400px){
+.container {
+  max-width: 1370px !important;
+}}

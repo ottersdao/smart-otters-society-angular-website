@@ -1,0 +1,162 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 15px;
+}
+
+body {
+  margin: 0;
+  --color-text: white;
+  --color-bg: black;
+  --color-1: blue;
+  --color-2: purple;
+  --color-link: white;
+  --color-link-hover: white;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  font-family: "Lato", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: auto;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.1ch;
+  scroll-behavior: smooth;
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: black;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #333;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+}
+
+/* Better focus styles from https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible */
+a:focus {
+  /* Provide a fallback style for browsers
+	 that don't support :focus-visible */
+  outline: none;
+  background: lightgrey;
+}
+
+a:focus:not(:focus-visible) {
+  /* Remove the focus indicator on mouse-focus for browsers
+	 that do support :focus-visible */
+  background: transparent;
+}
+
+a:focus-visible {
+  /* Draw a very noticeable focus style for
+	 keyboard-focus on browsers that do support
+	 :focus-visible */
+  outline: 2px solid red;
+  background: transparent;
+}
+
+.frame {
+  padding: 3rem 5vw;
+  text-align: center;
+  position: relative;
+  z-index: 1000;
+}
+
+.frame__title {
+  font-size: 1rem;
+  margin: 0 0 1rem;
+  font-weight: 500;
+}
+
+.frame__links {
+  display: inline;
+}
+
+.frame__links a:not(:last-child),
+.frame__demos a:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.frame__demos {
+  margin: 1rem 0;
+}
+
+.frame__demo--current,
+.frame__demo--current:hover {
+  color: var(--color-text);
+}
+
+.content {
+  width: 100%;
+  // height: calc(100vh - 13rem);
+}
+
+@media screen and (min-width: 53em) {
+  .frame {
+    position: fixed;
+    text-align: left;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    display: grid;
+    align-content: space-between;
+    width: 100%;
+    max-width: none;
+    height: 100vh;
+    padding: 1.75rem;
+    pointer-events: none;
+    grid-template-columns: 66% 34%;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "title links"
+      "... ..."
+      "... demos";
+  }
+  .frame__title-wrap {
+    align-self: center;
+    grid-area: title;
+    display: flex;
+  }
+  .frame__title {
+    margin: 0;
+  }
+  .frame__tagline {
+    position: relative;
+    margin: 0 0 0 1rem;
+    padding: 0 0 0 1rem;
+    opacity: 0.5;
+  }
+  .frame__demos {
+    margin: 0;
+    grid-area: demos;
+    justify-self: end;
+  }
+  .frame__links {
+    grid-area: links;
+    padding: 0;
+    justify-self: end;
+  }
+  .frame a {
+    pointer-events: auto;
+  }
+  .content {
+    // height: 100vh;
+  }
+}

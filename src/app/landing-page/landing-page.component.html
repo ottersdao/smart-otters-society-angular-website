@@ -1,0 +1,730 @@
+<div class="loader-wrapper" [ngClass]="{'hide-loader' : imagesLoaded}">
+  <div class="loader">
+    <span data-flicker-0="LOAD" data-flicker-1="ING" class="loader-text">LOADING</span>
+  </div>
+</div>
+
+<main id="main-wrapper">
+  <div class="main-navbar">
+    <div class="container-fluid">
+      <div class="row justify-content-between align-items-center">
+        <div class="col menu-container">
+          <img src="/assets/images/logo.png" class="logo" alt="">
+          <div class="menu d-none d-xl-block">
+            <a (click)="handleScrollToElement('home')">Home</a>
+            <a (click)="handleScrollToElement('about')">About</a>
+            <a (click)="handleScrollToElement('works')">Works</a>
+            <a (click)="handleScrollToElement('rarity')">Rarity</a>
+            <a (click)="handleScrollToElement('roadmap')">Roadmap</a>
+            <a (click)="handleScrollToElement('info')">Infographic</a>
+            <a (click)="handleScrollToElement('giveaway')">Giveaway</a>
+            <a (click)="handleScrollToElement('team')">Team</a>
+            <a href="/assets/documents/litepaper-v5.pdf" target="_blank">Litepaper</a>
+          </div>
+        </div>
+        <div class="col links-container">
+          <div class="menu-icon d-block d-xl-none" (click)="handleShowSidebar()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+              <path fill="none" d="M0 0h24v24H0z" />
+              <path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" /></svg>
+          </div>
+          <nav class="links d-none d-xl-flex">
+            <div>
+              <a href="https://discord.gg/wpcJDXa9tr" target="_blank" cursor-class="arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                  <path fill="none" d="M0 0h24v24H0z" />
+                  <path
+                    d="M10.076 11c.6 0 1.086.45 1.075 1 0 .55-.474 1-1.075 1C9.486 13 9 12.55 9 12s.475-1 1.076-1zm3.848 0c.601 0 1.076.45 1.076 1s-.475 1-1.076 1c-.59 0-1.075-.45-1.075-1s.474-1 1.075-1zm4.967-9C20.054 2 21 2.966 21 4.163V23l-2.211-1.995-1.245-1.176-1.317-1.25.546 1.943H5.109C3.946 20.522 3 19.556 3 18.359V4.163C3 2.966 3.946 2 5.109 2H18.89zm-3.97 13.713c2.273-.073 3.148-1.596 3.148-1.596 0-3.381-1.482-6.122-1.482-6.122-1.48-1.133-2.89-1.102-2.89-1.102l-.144.168c1.749.546 2.561 1.334 2.561 1.334a8.263 8.263 0 0 0-3.096-1.008 8.527 8.527 0 0 0-2.077.02c-.062 0-.114.011-.175.021-.36.032-1.235.168-2.335.662-.38.178-.607.305-.607.305s.854-.83 2.705-1.376l-.103-.126s-1.409-.031-2.89 1.103c0 0-1.481 2.74-1.481 6.121 0 0 .864 1.522 3.137 1.596 0 0 .38-.472.69-.871-1.307-.4-1.8-1.24-1.8-1.24s.102.074.287.179c.01.01.02.021.041.031.031.022.062.032.093.053.257.147.514.262.75.357.422.168.926.336 1.513.452a7.06 7.06 0 0 0 2.664.01 6.666 6.666 0 0 0 1.491-.451c.36-.137.761-.337 1.183-.62 0 0-.514.861-1.862 1.25.309.399.68.85.68.85z" />
+                </svg>
+              </a>
+              <a href="https://twitter.com/Ottersdao" target="_blank" cursor-class="arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                  <path fill="none" d="M0 0h24v24H0z" />
+                  <path
+                    d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z" />
+                </svg>
+              </a>
+              <a href="https://medium.com/@ottersdao" target="_blank" cursor-class="arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                  <path fill="none" d="M0 0h24v24H0z" />
+                  <path
+                    d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm13.3 12.94c-.1-.05-.15-.2-.15-.301V8.006c0-.1.05-.25.15-.351l.955-1.105V6.5H14.84l-2.56 6.478L9.366 6.5H5.852v.05l.903 1.256c.201.2.251.502.251.753v5.523c.05.302 0 .653-.15.954L5.5 16.894v.05h3.616v-.05L7.76 15.087c-.15-.302-.201-.603-.15-.954V9.11c.05.1.1.1.15.301l3.414 7.633h.05L14.54 8.76c-.05.3-.05.652-.05.904v5.925c0 .15-.05.25-.15.351l-1.005.954v.05h4.921v-.05l-.954-.954z" />
+                </svg>
+              </a>
+              <a href="https://github.com/ottersdao" target="_blank" cursor-class="arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                  <path fill="none" d="M0 0h24v24H0z" />
+                  <path
+                    d="M12 2C6.475 2 2 6.475 2 12a9.994 9.994 0 0 0 6.838 9.488c.5.087.687-.213.687-.476 0-.237-.013-1.024-.013-1.862-2.512.463-3.162-.612-3.362-1.175-.113-.288-.6-1.175-1.025-1.413-.35-.187-.85-.65-.013-.662.788-.013 1.35.725 1.538 1.025.9 1.512 2.338 1.087 2.912.825.088-.65.35-1.087.638-1.337-2.225-.25-4.55-1.113-4.55-4.938 0-1.088.387-1.987 1.025-2.688-.1-.25-.45-1.275.1-2.65 0 0 .837-.262 2.75 1.026a9.28 9.28 0 0 1 2.5-.338c.85 0 1.7.112 2.5.337 1.912-1.3 2.75-1.024 2.75-1.024.55 1.375.2 2.4.1 2.65.637.7 1.025 1.587 1.025 2.687 0 3.838-2.337 4.688-4.562 4.938.362.312.675.912.675 1.85 0 1.337-.013 2.412-.013 2.75 0 .262.188.574.688.474A10.016 10.016 0 0 0 22 12c0-5.525-4.475-10-10-10z" />
+                </svg>
+              </a>
+            </div>
+            <div class="divider"></div>
+            <button class="metamask-btn" cursor-class="arrow">
+              <img src="/assets/images/metamask-logo.svg" alt="">
+              <span>connect to wallet</span></button>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container full-height center-container" id="home">
+    <div class="row">
+      <div class="col-12">
+        <!-- <div class="circle__glow glow__purple fix-element" data-rellax-speed="-2"></div>
+        <div class="circle__glow__two glow__purple fix-element" data-rellax-speed="-2"></div> -->
+        <div class="hero__content">
+          <h1 class="hero__title" data-tilt data-tilt-reverse="true" data-tilt-speed="800" data-tilt-axis="x">
+            SM<span>A</span>RT
+            <br>
+            OTTERS <br> SOCIETY</h1>
+          <p class="hero__description">An Art Gallery with Decentralized Governance</p>
+          <button class="primary-btn" cursor-class="arrow">Mint Date: TBA</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container full-height center-container" id="about">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-12 col-md-6">
+        <div class="about__content wow animate__animated animate__fadeInLeft animate__fast">
+          <h1 class="title">About Us</h1>
+          <p class="about__description">
+            We are a Society of SmArt Otters in love with innovative artworks. We want to aid young and talented artists
+            to have a platform to present their work to the world. We check out artworks, choose the finest ones and
+            bring them forward to the world.
+            <br>
+
+            To achieve this goal, we rolled up our sleeves and started our mission to create a Decentralized Autonomous
+            Art Gallery.
+            <br>
+
+            Become a member of the SmArt Otters Society so we can redefine the role of dealers as the bridge between
+            artists and collectors. Join our decentralized art gallery as a SmArt Otter and take part in this historical
+            turn. We hope that our unique gallery creates a bright future for the art world and young artists.
+          </p>
+          <div class="about__description">
+
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="about__image wow animate__animated animate__fadeInRight animate__fast">
+          <img src="/assets/images/banner.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="full-container full-height center-container" id="works">
+    <div class="work__content">
+      <div class="wow animate__animated animate__zoomIn animate__fast">
+        <h1 class="title">Our Works</h1>
+        <p class="work__description">
+          SmArt Otters Society NFTs are 10,000 machine-generated hand-drawn and unique Otters created by a young and
+          talented artist named Moineau. The Otters are made from more than 300 objects in 8 layers. They swim across
+          Ethereum blockchain and plan to run a decentralized autonomous art gallery together.
+          <br>
+          In the SmArt Otters Society, four separate Otters groups live in harmony. Despite their unique features, they
+          have some in common. They are all passionate about art in such a way that their eyes sparkle at the sight of a
+          remarkable piece.
+        </p>
+      </div>
+      <div class="splide work__slider__first pointer_none">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide">
+              <img src="/assets/images/01.jpeg">
+            </li>
+            <li class="splide__slide">
+              <img src="/assets/images/02.jpeg">
+            </li>
+            <li class="splide__slide">
+              <img src="/assets/images/03.jpeg">
+            </li>
+            <li class="splide__slide">
+              <img src="/assets/images/04.jpeg">
+            </li>
+            <li class="splide__slide">
+              <img src="/assets/images/05.jpeg">
+            </li>
+            <li class="splide__slide">
+              <img src="/assets/images/06.jpeg">
+            </li>
+            <li class="splide__slide">
+              <img src="/assets/images/07.jpeg">
+            </li>
+            <li class="splide__slide">
+              <img src="/assets/images/08.jpeg">
+            </li>
+            <li class="splide__slide">
+              <img src="/assets/images/09.jpeg">
+            </li>
+            <li class="splide__slide">
+              <img src="/assets/images/10.jpeg">
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="splide work__slider__second pointer_none">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide">
+              <img src="/assets/images/11.jpeg">
+            </li>
+            <li class="splide__slide">
+              <img src="/assets/images/12.jpeg">
+            </li>
+            <li class="splide__slide">
+              <img src="/assets/images/13.jpeg">
+            </li>
+            <li class="splide__slide">
+              <img src="/assets/images/14.jpeg">
+            </li>
+            <li class="splide__slide">
+              <img src="/assets/images/15.jpeg">
+            </li>
+            <li class="splide__slide">
+              <img src="/assets/images/16.jpeg">
+            </li>
+            <li class="splide__slide">
+              <img src="/assets/images/17.jpeg">
+            </li>
+            <li class="splide__slide">
+              <img src="/assets/images/18.jpeg">
+            </li>
+            <li class="splide__slide">
+              <img src="/assets/images/19.jpeg">
+            </li>
+            <li class="splide__slide">
+              <img src="/assets/images/20.jpeg">
+            </li>
+          </ul>
+        </div>
+      </div>
+      <button class="primary-btn" cursor-class="arrow">Mint Date: TBA</button>
+    </div>
+  </div>
+
+  <div class="container full-height center-container" id="rarity">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-12 col-md-6">
+        <div class="rarity__content wow animate__animated animate__fadeInLeft animate__fast">
+          <h1 class="title">Rarity</h1>
+          <p class="rarity__description">
+            <b>Critics</b> might appear straight face on the outside, but they possess a genuinely aesthetic soul. They
+            try to
+            combine their instinct and knowledge to discover a highly complex richness of art.
+            <br>
+            <br>
+            <b>Punks</b> are rebellious in nature and want to experience life on their own terms. They enjoy avant-garde
+            nonconformist artworks.
+            <br>
+            <br>
+            <b>Hippies</b> are spiritual, tired of busy city life, and love long walks in nature. They love to explore
+            the
+            mystery of the art world
+            <br>
+            <br>
+            <b>Fantasies</b> are cheerful. They search for uplifting experiences in the art. They love pieces dealing
+            with
+            everyday objects and something worth hanging in a museum.
+          </p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="wow animate__animated animate__fadeInRight animate__fast">
+          <div id="chartContainer"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container full-height" id="roadmap">
+    <div class="row">
+      <div class="col-12">
+        <div class="roadmap__content">
+          <h1 class="title">Life Plan</h1>
+          <p class="roadmap__description">
+            We see the SmArt Otters Society as a living creature. This creature has a mind and a soul as well as a
+            physical body. That's why its life plan has two parts.
+            <br>
+            The Society as its mind and soul, and the System as its flesh.
+            <br>
+            Watching this creature mature and evolve with your own eyes is one of the exciting parts of engaging in the
+            SmArt Otters Society.
+          </p>
+
+          <div class="timeline__wrapper">
+            <div class="timeline__title__content">
+              <h3>society</h3>
+              <h3>system</h3>
+            </div>
+            <div class="item">
+              <div class="item__content wow animate__animated animate__fadeInLeft animate__fast">
+                <span>Society</span>
+                <p>The journey begins </p>
+              </div>
+            </div>
+            <div class="item item__right">
+              <div class="item__content  wow animate__animated animate__fadeInRight animate__fast">
+                <span>System</span>
+                <p>Minting of SmArt Otters NFTs</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item__content wow animate__animated animate__fadeInLeft animate__fast">
+                <span>Society</span>
+                <p>A lottery to give away 25 artworks among the first 1000 buyers</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item__content wow animate__animated animate__fadeInLeft animate__fast">
+                <span>Society</span>
+                <p>
+                  Confirming the best procedure for selecting the artworks with the help of the Society
+                </p>
+              </div>
+            </div>
+            <div class="item item__right">
+              <div class="item__content wow animate__animated animate__fadeInRight animate__fast">
+                <span>System</span>
+                <p>
+                  Launching of the unofficial voting bot in Discord
+                </p>
+              </div>
+            </div>
+            <div class="item item__right">
+              <div class="item__content wow animate__animated animate__fadeInRight animate__fast">
+                <span>System</span>
+                <p>
+                  Launching of the Otters' DAO system and DAPP with a "Vote to Earn" feature
+                </p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item__content wow animate__animated animate__fadeInLeft animate__fast">
+                <span>Society</span>
+                <p>
+                  Members propose artworks for the 1st official project
+                </p>
+              </div>
+            </div>
+            <div class="item item__right">
+              <div class="item__content wow animate__animated animate__fadeInRight animate__fast">
+                <span>System</span>
+                <p>
+                  Launching of the utility tokens of the Society
+                </p>
+              </div>
+            </div>
+            <div class="item item__right">
+              <div class="item__content wow animate__animated animate__fadeInRight animate__fast">
+                <span>System</span>
+                <p>Developing and improving the SmArt contract and DAPP is a never stopping journey. The relentless
+                  efforts of the tech team are to make processes and moderation of the decentralized art gallery more
+                  and more automatic</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container full-height center-container" id="info">
+    <div class="info__content">
+      <h1 class="title wow animate__animated animate__zoomIn animate__fast">Otters' DAO Mechanism</h1>
+      <img src="/assets/images/info.png" class="info-image wow animate__animated animate__slideInUp animate__fast"
+        alt="">
+    </div>
+  </div>
+
+  <div class="container full-height center-container" id="giveaway">
+    <div class="giveaway__content">
+      <h1 class="title">GIVEAWAY ALBUM</h1>
+      <div class="splide giveaway__slider">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide">
+              <div class="giveaway-album-wrapper">
+                <div class="item item-1">
+                  <img src="/assets/images/ga/d1.jpg" alt="">
+                </div>
+                <div class="item item-2">
+                  <img src="/assets/images/ga/d2.jpg" alt="">
+                </div>
+                <div class="item item-3">
+                  <img src="/assets/images/ga/d3.jpg" alt="">
+                </div>
+                <div class="item item-4">
+                  <img src="/assets/images/ga/d4.jpg" alt="">
+                </div>
+                <div class="item item-5">
+                  <img src="/assets/images/ga/d5.jpg" alt="">
+                </div>
+              </div>
+              <div class="album-designer">
+                <h3>Dani Hope</h3>
+                <a href="https://twitter.com/danihopeartist" target="_blank">@danihopeartist</a>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div class="giveaway-album-wrapper">
+                <div class="item item-1">
+                  <img src="/assets/images/ga/f1.jpg" alt="">
+                </div>
+                <div class="item item-2">
+                  <img src="/assets/images/ga/f2.jpg" alt="">
+                </div>
+                <div class="item item-3">
+                  <img src="/assets/images/ga/f3.jpg" alt="">
+                </div>
+                <div class="item item-4">
+                  <img src="/assets/images/ga/f4.jpg" alt="">
+                </div>
+                <div class="item item-5">
+                  <img src="/assets/images/ga/f5.jpg" alt="">
+                </div>
+              </div>
+              <div class="album-designer">
+                <h3>Moineau</h3>
+                <a href="https://twitter.com/DStoneSparrow" target="_blank">@DStoneSparrow</a>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div class="giveaway-album-wrapper">
+                <div class="item item-1">
+                  <img src="/assets/images/ga/fe1.jpg" alt="">
+                </div>
+                <div class="item item-2">
+                  <img src="/assets/images/ga/fe2.jpg" alt="">
+                </div>
+                <div class="item item-3">
+                  <img src="/assets/images/ga/fe3.jpg" alt="">
+                </div>
+                <div class="item item-4">
+                  <img src="/assets/images/ga/fe4.jpg" alt="">
+                </div>
+                <div class="item item-5">
+                  <img src="/assets/images/ga/fe5.jpg" alt="">
+                </div>
+              </div>
+              <div class="album-designer">
+                <h3>Ferik</h3>
+                <a href="https://twitter.com/itsferik" target="_blank">@itsferik</a>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div class="giveaway-album-wrapper">
+                <div class="item item-1">
+                  <img src="/assets/images/ga/t1.jpg" alt="">
+                </div>
+                <div class="item item-2">
+                  <img src="/assets/images/ga/t2.jpg" alt="">
+                </div>
+                <div class="item item-3">
+                  <img src="/assets/images/ga/t3.jpg" alt="">
+                </div>
+                <div class="item item-4">
+                  <img src="/assets/images/ga/t4.jpg" alt="">
+                </div>
+                <div class="item item-5">
+                  <img src="/assets/images/ga/t5.jpg" alt="">
+                </div>
+              </div>
+              <div class="album-designer">
+                <h3>ttakingg</h3>
+                <a href="https://www.instagram.com/ttakingg/" target="_blank">@ttakingg</a>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div class="giveaway-album-wrapper">
+                <div class="item item-1">
+                  <img src="/assets/images/ga/v1.jpg" alt="">
+                </div>
+                <div class="item item-2">
+                  <img src="/assets/images/ga/v2.jpg" alt="">
+                </div>
+                <div class="item item-3">
+                  <img src="/assets/images/ga/v3.jpg" alt="">
+                </div>
+                <div class="item item-4">
+                  <img src="/assets/images/ga/v4.jpg" alt="">
+                </div>
+                <div class="item item-5">
+                  <img src="/assets/images/ga/v5.jpg" alt="">
+                </div>
+              </div>
+              <div class="album-designer">
+                <h3>Vahed</h3>
+                <a href="https://twitter.com/yaboyvahed" target="_blank">@yaboyvahed</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container full-height center-container" id="team">
+    <div class="team__content">
+      <h1 class="title">team</h1>
+      <div class="team__grid wow animate__animated animate__zoomIn">
+        <div class="item">
+          <img src="/assets/images/t1.jpg">
+          <h3>Jonah</h3>
+          <p>
+            Jonah is the "guy who knows a guy" of the team, and he is practically the team's glue. He always has a handy
+            solution for any mess, just like the Swiss army knife.
+          </p>
+        </div>
+        <div class="item">
+          <img src="/assets/images/t2.jpg">
+          <h3>Harry</h3>
+          <p>
+            Harry has been soaking his fingers in code since his age turned into a 2-digit number. He is our tech wizard
+            who can make everything possible with a single wave of his magic wand.
+          </p>
+        </div>
+        <div class="item">
+          <img src="/assets/images/t3.jpg">
+          <h3>Ryna</h3>
+          <p>
+            Ryna loves to try and mix everything; that's why she has a colorful resume in business. She has a soft spot
+            for people and cares for them, and now she is helping us care for our society members too.
+          </p>
+        </div>
+        <div class="item">
+          <img src="/assets/images/t4.jpg">
+          <h3>Moineau</h3>
+          <p>
+            Moineau is the artsy guy. Moineau's art paints over the world's gloom. With his magical pen and his
+            sensational creativity, he has given life to every single one of the Otters.
+          </p>
+        </div>
+        <div class="item">
+          <img src="/assets/images/t5.jpg">
+          <h3>Geralt</h3>
+          <p>
+            Geralt's passion for programming kicked off as he started printing "Hello World," and now, he lives for
+            the codes. He also has a knack for flawless designs.
+          </p>
+        </div>
+        <div class="item">
+          <img src="/assets/images/t6.jpg">
+          <h3>Meera</h3>
+          <p>
+            Meera's passion is diving into creative and uncommon things. She refuses to get bored, so there's always a
+            search mission in progress to find new projects, and meeting new people is her mission plan.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12">
+        <div class="faq__content">
+          <h1 class="title">FAQ</h1>
+          <div class="accordion-wrap">
+            <div class="main-accordion-item close">
+              <div class="main-accordion-header">
+                <h3 class="heading">What is a DAO?</h3>
+                <span class="icon plus">&#43;</span>
+                <span class="icon minus">&#8722;</span>
+              </div>
+              <div class="content">
+                <p>
+                  A DAO is an organization with a decentralized governance structure led by its members. The cornerstone
+                  of a DAO is its customized SmArt contract, a self-executing real-time computer program.
+                </p>
+              </div>
+            </div>
+            <div class="main-accordion-item close">
+              <div class="main-accordion-header">
+                <h3 class="heading">What is Otters DAO, and how can I join?</h3>
+                <span class="icon plus">&#43;</span>
+                <span class="icon minus">&#8722;</span>
+              </div>
+              <div class="content">
+                <p>
+                  Otters DAO or the SmArt Otters DAO is an art gallery with a decentralized governance structure. To be
+                  a member of the SmArt Otters' Art Gallery and help build its future, holding a SmArt Otters' NFT is
+                  the first step. Each NFT represents one vote in the Otters DAO system.
+                </p>
+              </div>
+            </div>
+            <div class="main-accordion-item close">
+              <div class="main-accordion-header">
+                <h3 class="heading">What is the utility behind the SmArt Otters Society? </h3>
+                <span class="icon plus">&#43;</span>
+                <span class="icon minus">&#8722;</span>
+              </div>
+              <div class="content">
+                <p>
+                  SmArt Otters Society members run the Otters DAO together and, with the help of a unique customized
+                  SmArt contract, make critical decisions about the future of their community. They make proposals about
+                  future operations and projects, vote on them, and select those that achieve some predefined consensus
+                  level.
+                </p>
+              </div>
+            </div>
+            <div class="main-accordion-item close">
+              <div class="main-accordion-header">
+                <h3 class="heading">Would you explain more about the Otters DAO Mechanism?</h3>
+                <span class="icon plus">&#43;</span>
+                <span class="icon minus">&#8722;</span>
+              </div>
+              <div class="content">
+                <p>
+                  We have an infographic to explain the mechanism of Otters DAO. You can also read our <a
+                    href="/assets/documents/litepaper.pdf" target="_blank">litepaper</a> for
+                  more details.
+                </p>
+              </div>
+            </div>
+            <div class="main-accordion-item close">
+              <div class="main-accordion-header">
+                <h3 class="heading">How can I get a SmArt Otter? </h3>
+                <span class="icon plus">&#43;</span>
+                <span class="icon minus">&#8722;</span>
+              </div>
+              <div class="content">
+                <p>
+                  We will mint through our website, and the date will be announced soon. Otters' NFTs will be on OpenSea
+                  for secondary sales.
+                </p>
+              </div>
+            </div>
+            <div class="main-accordion-item close">
+              <div class="main-accordion-header">
+                <h3 class="heading">Is there a whitelist?</h3>
+                <span class="icon plus">&#43;</span>
+                <span class="icon minus">&#8722;</span>
+              </div>
+              <div class="content">
+                <p>
+                  Yes, of course! And it's still open! The active and helpful members will be rewarded with whitelist
+                  positions. This is a holistic process as we take your engagement, invites, and <a
+                    href="https://twitter.com/Ottersdao" target="_blank">Twitter</a> shoutouts into
+                  account. Check out our <a href="https://discord.gg/wpcJDXa9tr" target="_blank">Discord</a> for more
+                  info!
+                </p>
+              </div>
+            </div>
+            <div class="main-accordion-item close">
+              <div class="main-accordion-header">
+                <h3 class="heading">That sounds great. How do I get in?</h3>
+                <span class="icon plus">&#43;</span>
+                <span class="icon minus">&#8722;</span>
+              </div>
+              <div class="content">
+                <p>
+                  Join our <a href="https://discord.gg/wpcJDXa9tr" target="_blank">Discord</a>
+                  or <a href="https://twitter.com/OttersDAO" target="_blank">Twitter</a> and jump
+                  into the conversation & share your ideas!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer__content">
+    <h1 class="title">SMART <br> OTTERS <br> SOCIETY <br></h1>
+    <div class="footer_links">
+      <a href="https://discord.gg/wpcJDXa9tr" target="_blank" cursor-class="arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+          <path fill="none" d="M0 0h24v24H0z" />
+          <path
+            d="M10.076 11c.6 0 1.086.45 1.075 1 0 .55-.474 1-1.075 1C9.486 13 9 12.55 9 12s.475-1 1.076-1zm3.848 0c.601 0 1.076.45 1.076 1s-.475 1-1.076 1c-.59 0-1.075-.45-1.075-1s.474-1 1.075-1zm4.967-9C20.054 2 21 2.966 21 4.163V23l-2.211-1.995-1.245-1.176-1.317-1.25.546 1.943H5.109C3.946 20.522 3 19.556 3 18.359V4.163C3 2.966 3.946 2 5.109 2H18.89zm-3.97 13.713c2.273-.073 3.148-1.596 3.148-1.596 0-3.381-1.482-6.122-1.482-6.122-1.48-1.133-2.89-1.102-2.89-1.102l-.144.168c1.749.546 2.561 1.334 2.561 1.334a8.263 8.263 0 0 0-3.096-1.008 8.527 8.527 0 0 0-2.077.02c-.062 0-.114.011-.175.021-.36.032-1.235.168-2.335.662-.38.178-.607.305-.607.305s.854-.83 2.705-1.376l-.103-.126s-1.409-.031-2.89 1.103c0 0-1.481 2.74-1.481 6.121 0 0 .864 1.522 3.137 1.596 0 0 .38-.472.69-.871-1.307-.4-1.8-1.24-1.8-1.24s.102.074.287.179c.01.01.02.021.041.031.031.022.062.032.093.053.257.147.514.262.75.357.422.168.926.336 1.513.452a7.06 7.06 0 0 0 2.664.01 6.666 6.666 0 0 0 1.491-.451c.36-.137.761-.337 1.183-.62 0 0-.514.861-1.862 1.25.309.399.68.85.68.85z" />
+        </svg>
+      </a>
+      <a href="https://twitter.com/Ottersdao" target="_blank" cursor-class="arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+          <path fill="none" d="M0 0h24v24H0z" />
+          <path
+            d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z" />
+        </svg>
+      </a>
+      <a href="https://medium.com/@ottersdao" target="_blank" cursor-class="arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+          <path fill="none" d="M0 0h24v24H0z" />
+          <path
+            d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm13.3 12.94c-.1-.05-.15-.2-.15-.301V8.006c0-.1.05-.25.15-.351l.955-1.105V6.5H14.84l-2.56 6.478L9.366 6.5H5.852v.05l.903 1.256c.201.2.251.502.251.753v5.523c.05.302 0 .653-.15.954L5.5 16.894v.05h3.616v-.05L7.76 15.087c-.15-.302-.201-.603-.15-.954V9.11c.05.1.1.1.15.301l3.414 7.633h.05L14.54 8.76c-.05.3-.05.652-.05.904v5.925c0 .15-.05.25-.15.351l-1.005.954v.05h4.921v-.05l-.954-.954z" />
+        </svg>
+      </a>
+      <a href="https://github.com/ottersdao" target="_blank" cursor-class="arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+          <path fill="none" d="M0 0h24v24H0z" />
+          <path
+            d="M12 2C6.475 2 2 6.475 2 12a9.994 9.994 0 0 0 6.838 9.488c.5.087.687-.213.687-.476 0-.237-.013-1.024-.013-1.862-2.512.463-3.162-.612-3.362-1.175-.113-.288-.6-1.175-1.025-1.413-.35-.187-.85-.65-.013-.662.788-.013 1.35.725 1.538 1.025.9 1.512 2.338 1.087 2.912.825.088-.65.35-1.087.638-1.337-2.225-.25-4.55-1.113-4.55-4.938 0-1.088.387-1.987 1.025-2.688-.1-.25-.45-1.275.1-2.65 0 0 .837-.262 2.75 1.026a9.28 9.28 0 0 1 2.5-.338c.85 0 1.7.112 2.5.337 1.912-1.3 2.75-1.024 2.75-1.024.55 1.375.2 2.4.1 2.65.637.7 1.025 1.587 1.025 2.687 0 3.838-2.337 4.688-4.562 4.938.362.312.675.912.675 1.85 0 1.337-.013 2.412-.013 2.75 0 .262.188.574.688.474A10.016 10.016 0 0 0 22 12c0-5.525-4.475-10-10-10z" />
+        </svg>
+      </a>
+    </div>
+    <img src="/assets/images/footer.png" class="footer-bg" alt="Smart Otter Society">
+  </div>
+
+  <div class="content"></div>
+</main>
+
+<aside class="sidebar-wrapper" [ngClass]="{'show-sidebar': showSidebar}">
+  <div class="sidebar-overlay" (click)="handleShowSidebar()"></div>
+  <div class="sidebar-panel">
+    <div class="logo">
+      <img src="assets/images/logo.png" alt="">
+    </div>
+    <nav class="menu">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#works">Works</a>
+      <a href="#rarity">Rarity</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#giveaway">Giveaway</a>
+      <a href="#teams">Team</a>
+      <a href="/assets/documents/litepaper-v5.pdf" target="_blank">Litepaper</a>
+      <button class="metamask-btn mt-5 mx-auto d-block w-75">
+        <img src="assets/images/metamask-logo.svg" alt="">
+        <span>Connect To Wallet</span>
+      </button>
+    </nav>
+    <div class="links">
+      <a href="https://discord.gg/wpcJDXa9tr" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+          <path fill="none" d="M0 0h24v24H0z" />
+          <path
+            d="M10.076 11c.6 0 1.086.45 1.075 1 0 .55-.474 1-1.075 1C9.486 13 9 12.55 9 12s.475-1 1.076-1zm3.848 0c.601 0 1.076.45 1.076 1s-.475 1-1.076 1c-.59 0-1.075-.45-1.075-1s.474-1 1.075-1zm4.967-9C20.054 2 21 2.966 21 4.163V23l-2.211-1.995-1.245-1.176-1.317-1.25.546 1.943H5.109C3.946 20.522 3 19.556 3 18.359V4.163C3 2.966 3.946 2 5.109 2H18.89zm-3.97 13.713c2.273-.073 3.148-1.596 3.148-1.596 0-3.381-1.482-6.122-1.482-6.122-1.48-1.133-2.89-1.102-2.89-1.102l-.144.168c1.749.546 2.561 1.334 2.561 1.334a8.263 8.263 0 0 0-3.096-1.008 8.527 8.527 0 0 0-2.077.02c-.062 0-.114.011-.175.021-.36.032-1.235.168-2.335.662-.38.178-.607.305-.607.305s.854-.83 2.705-1.376l-.103-.126s-1.409-.031-2.89 1.103c0 0-1.481 2.74-1.481 6.121 0 0 .864 1.522 3.137 1.596 0 0 .38-.472.69-.871-1.307-.4-1.8-1.24-1.8-1.24s.102.074.287.179c.01.01.02.021.041.031.031.022.062.032.093.053.257.147.514.262.75.357.422.168.926.336 1.513.452a7.06 7.06 0 0 0 2.664.01 6.666 6.666 0 0 0 1.491-.451c.36-.137.761-.337 1.183-.62 0 0-.514.861-1.862 1.25.309.399.68.85.68.85z" />
+        </svg>
+      </a>
+      <a href="https://twitter.com/Ottersdao" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+          <path fill="none" d="M0 0h24v24H0z" />
+          <path
+            d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z" />
+        </svg>
+      </a>
+      <a href="https://medium.com/@ottersdao" target="_blank" cursor-class="arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+          <path fill="none" d="M0 0h24v24H0z" />
+          <path
+            d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm13.3 12.94c-.1-.05-.15-.2-.15-.301V8.006c0-.1.05-.25.15-.351l.955-1.105V6.5H14.84l-2.56 6.478L9.366 6.5H5.852v.05l.903 1.256c.201.2.251.502.251.753v5.523c.05.302 0 .653-.15.954L5.5 16.894v.05h3.616v-.05L7.76 15.087c-.15-.302-.201-.603-.15-.954V9.11c.05.1.1.1.15.301l3.414 7.633h.05L14.54 8.76c-.05.3-.05.652-.05.904v5.925c0 .15-.05.25-.15.351l-1.005.954v.05h4.921v-.05l-.954-.954z" />
+        </svg>
+      </a>
+      <a href="https://github.com/ottersdao" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+          <path fill="none" d="M0 0h24v24H0z" />
+          <path
+            d="M12 2C6.475 2 2 6.475 2 12a9.994 9.994 0 0 0 6.838 9.488c.5.087.687-.213.687-.476 0-.237-.013-1.024-.013-1.862-2.512.463-3.162-.612-3.362-1.175-.113-.288-.6-1.175-1.025-1.413-.35-.187-.85-.65-.013-.662.788-.013 1.35.725 1.538 1.025.9 1.512 2.338 1.087 2.912.825.088-.65.35-1.087.638-1.337-2.225-.25-4.55-1.113-4.55-4.938 0-1.088.387-1.987 1.025-2.688-.1-.25-.45-1.275.1-2.65 0 0 .837-.262 2.75 1.026a9.28 9.28 0 0 1 2.5-.338c.85 0 1.7.112 2.5.337 1.912-1.3 2.75-1.024 2.75-1.024.55 1.375.2 2.4.1 2.65.637.7 1.025 1.587 1.025 2.687 0 3.838-2.337 4.688-4.562 4.938.362.312.675.912.675 1.85 0 1.337-.013 2.412-.013 2.75 0 .262.188.574.688.474A10.016 10.016 0 0 0 22 12c0-5.525-4.475-10-10-10z" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</aside>
+
+<div id="cursor">
+  <div class="cursor__circle"></div>
+</div>
